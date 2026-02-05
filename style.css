@@ -1,24 +1,71 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Portfolio – Data Scientist</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>👋 Bonjour, je suis Data Scientist</h1>
-  <p>Spécialisée en assurance, data science & optimisation.</p>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+  color: #1f2933;
+  line-height: 1.6;
+}
 
-  <h2>Projets</h2>
-  <ul>
-    <li>📊 Prédiction du churn client</li>
-    <li>⚙️ Optimisation de tournées logistiques</li>
-    <li>🧠 Machine Learning end-to-end</li>
-  </ul>
+header {
+  padding: 40px;
+  border-bottom: 1px solid #e5e7eb;
+}
 
-  <p>
-    🔗 <a href="https://github.com/djey31">GitHub</a> |
-    🔗 <a href="https://linkedin.com/in/Djeneba Coulibaly">LinkedIn</a>
-  </p>
-</body>
-</html>
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+header h2 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #374151;
+}
+
+header p {
+  margin: 5px 0 20px;
+  color: #4b5563;
+}
+
+.links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #1d4ed8;
+  font-weight: 500;
+}
+
+section {
+  padding: 40px;
+  max-width: 900px;
+}
+
+h3 {
+  border-bottom: 2px solid #1d4ed8;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.experience {
+  margin-top: 20px;
+}
+
+.experience h4 {
+  margin-bottom: 5px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+footer {
+  padding: 20px 40px;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 14px;
+}
