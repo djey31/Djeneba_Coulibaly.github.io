@@ -1,9 +1,8 @@
-const slides = document.querySelectorAll(".slide");
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add("active");
+function showSection(sectionId) {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.classList.remove('active');
   });
-}, { threshold: 0.12 });
 
-slides.forEach((s) => observer.observe(s));
+  document.getElementById(sectionId).classList.add('active');
+}
