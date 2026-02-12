@@ -10,20 +10,24 @@
 
 <div class="layout">
 
-  <!-- LEFT PANEL -->
-  <div class="sidebar">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
     <img src="assets/photo-pro.jpg" class="profile-img" alt="Djénéba Coulibaly">
 
     <h1>Djénéba Coulibaly</h1>
-    <p class="role">Data Science • ML • NLP • Optimisation</p>
+    <p class="role">Data Science • Machine Learning • NLP • Optimisation</p>
 
     <div class="about-box">
-      <h3>À propos</h3>
+      <h3>Profil</h3>
       <p>
-        Formée en économétrie et data science, je développe des solutions
-        analytiques complètes : exploration, modélisation, validation
-        et industrialisation.
+        Data Scientist spécialisée en économétrie et statistiques appliquées.
+        Je conçois des solutions analytiques complètes : exploration,
+        modélisation prédictive, analyse NLP, visualisation et déploiement.
+      </p>
+      <p>
+        Mon approche repose sur la rigueur méthodologique,
+        l’analyse orientée décision et l’industrialisation des modèles.
       </p>
     </div>
 
@@ -36,95 +40,125 @@
       <button onclick="showSection('contact')">Contact</button>
     </nav>
 
-  </div>
+  </aside>
 
-  <!-- RIGHT PANEL -->
-  <div class="content">
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
     <!-- EXPERIENCES -->
-    <div id="experience" class="section active">
+    <section id="experience" class="section active">
       <h2>Expériences professionnelles</h2>
 
       <div class="card">
         <h3>Data Scientist — Diot-Siaci</h3>
-        <span>09/2025 – Aujourd’hui</span>
+        <span class="date">09/2025 – Aujourd’hui</span>
         <ul>
-          <li>Préparation & structuration données multi-sources</li>
-          <li>Modèles ML (classification, régression)</li>
+          <li>Préparation et structuration de données multi-sources</li>
+          <li>Développement de modèles ML (classification, régression)</li>
           <li>Analyse NLP des verbatims clients</li>
-          <li>Dashboards décisionnels</li>
+          <li>Création de dashboards décisionnels</li>
+          <li>Accompagnement sur des sujets d’IA générative</li>
         </ul>
       </div>
 
       <div class="card">
         <h3>Data Scientist — DEKI</h3>
-        <span>05/2025 – 08/2025</span>
+        <span class="date">05/2025 – 08/2025</span>
         <ul>
-          <li>Optimisation logistique (VRP)</li>
-          <li>API Flask & Docker</li>
-          <li>Déploiement cloud</li>
+          <li>Optimisation logistique (Vehicle Routing Problem)</li>
+          <li>Déploiement API Flask</li>
+          <li>Containerisation Docker & Docker Compose</li>
+          <li>Déploiement cloud (Scaleway)</li>
         </ul>
       </div>
-    </div>
+    </section>
+
 
     <!-- PROJECTS -->
-    <div id="projects" class="section">
+    <section id="projects" class="section">
       <h2>Projets</h2>
 
       <div class="card">
-        <h3>Football Analytics</h3>
-        <p>Application Streamlit connectée à API REST avec visualisations interactives.</p>
+        <h3>Football Analytics Pro</h3>
+        <p>
+          Application Streamlit connectée à une API REST permettant
+          l’analyse statistique et la visualisation interactive de données.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Analyse Verbatims — NLP</h3>
-        <p>Extraction d’insights via TF-IDF et clustering.</p>
+        <h3>Analyse des Verbatims — NLP</h3>
+        <p>
+          Extraction d’insights à partir de retours clients via
+          vectorisation TF-IDF et clustering.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Modélisation Prédictive</h3>
-        <p>Logit & Random Forest pour prédiction trafic web.</p>
+        <h3>Modélisation Prédictive — Trafic Web</h3>
+        <p>
+          Modèles économétriques (Logit, Random Forest) pour prédire
+          le trafic généré par des contenus.
+        </p>
       </div>
-    </div>
+    </section>
+
 
     <!-- SKILLS -->
-    <div id="skills" class="section">
+    <section id="skills" class="section">
       <h2>Compétences</h2>
       <div class="card">
-        <p><strong>Langages :</strong> Python, R, SQL</p>
-        <p><strong>ML :</strong> Régression, Classification, Random Forest</p>
-        <p><strong>NLP :</strong> TF-IDF, Clustering</p>
+        <p><strong>Langages :</strong> Python, R, SQL, JavaScript</p>
+        <p><strong>Machine Learning :</strong> Régression, Classification, Random Forest</p>
+        <p><strong>NLP :</strong> TF-IDF, Clustering, Analyse de sentiment</p>
         <p><strong>Optimisation :</strong> Vehicle Routing Problem</p>
       </div>
-    </div>
+    </section>
+
 
     <!-- EDUCATION -->
-    <div id="education" class="section">
+    <section id="education" class="section">
       <h2>Formation</h2>
+
       <div class="card">
         <h3>Master Économétrie & Statistique</h3>
-        <p>Aix-Marseille School of Economics</p>
+        <p>Aix-Marseille School of Economics (2021–2026)</p>
       </div>
-    </div>
+
+      <div class="card">
+        <h3>Licence Mathématiques Appliquées aux Sciences Sociales</h3>
+        <p>Université Aix-Marseille</p>
+      </div>
+
+      <div class="card">
+        <h3>Baccalauréat Scientifique</h3>
+        <p>Série Scientifique</p>
+      </div>
+    </section>
+
 
     <!-- TOOLS -->
-    <div id="tools" class="section">
+    <section id="tools" class="section">
       <h2>Logiciels & Outils</h2>
       <div class="card">
-        <p>Docker • Flask • Streamlit • Power BI • Tableau • Git • MySQL • Scaleway</p>
+        <p>Docker • Flask • Streamlit • Power BI • Tableau • Git • GitHub • MySQL • Scaleway • VS Code • Jupyter</p>
       </div>
-    </div>
+    </section>
+
 
     <!-- CONTACT -->
-    <div id="contact" class="section">
+    <section id="contact" class="section">
       <h2>Contact</h2>
       <div class="card">
         <p>📍 Paris</p>
+        <p>📞 +33 7 58 08 06 79</p>
         <p>✉️ djenebacoulibaly.pro@gmail.com</p>
+        <p>LinkedIn : djénéba-coulibaly</p>
       </div>
-    </div>
+    </section>
 
-  </div>
+  </main>
 
 </div>
 
