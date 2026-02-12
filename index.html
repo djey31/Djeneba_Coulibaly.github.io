@@ -1,177 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Djénéba Coulibaly — Data Scientist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Djénéba Coulibaly — Data Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav class="nav">
-  <div class="brand">Djénéba Coulibaly</div>
-  <div class="nav-links">
-    <a href="#about">À propos</a>
-    <a href="#experience">Expériences</a>
-    <a href="#projects">Projets</a>
-    <a href="#skills">Compétences</a>
-    <a href="#tools">Logiciels</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<div class="layout">
 
-<header class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Djénéba Coulibaly</h1>
-      <p class="subtitle">Data Science • Machine Learning • NLP • Optimisation</p>
+  <!-- LEFT PANEL -->
+  <div class="sidebar">
+
+    <img src="assets/photo-pro.jpg" class="profile-img" alt="Djénéba Coulibaly">
+
+    <h1>Djénéba Coulibaly</h1>
+    <p class="role">Data Science • ML • NLP • Optimisation</p>
+
+    <div class="about-box">
+      <h3>À propos</h3>
       <p>
-        Spécialisée en économétrie et data science, je développe des solutions
-        analytiques complètes : exploration, modélisation, validation et déploiement.
+        Formée en économétrie et data science, je développe des solutions
+        analytiques complètes : exploration, modélisation, validation
+        et industrialisation.
       </p>
-      <div class="buttons">
-        <a href="assets/cv.pdf" target="_blank" class="btn primary">CV</a>
-        <a href="https://github.com/djey31" target="_blank" class="btn ghost">GitHub</a>
+    </div>
+
+    <nav class="menu">
+      <button onclick="showSection('experience')">Expériences</button>
+      <button onclick="showSection('projects')">Projets</button>
+      <button onclick="showSection('skills')">Compétences</button>
+      <button onclick="showSection('education')">Formation</button>
+      <button onclick="showSection('tools')">Logiciels</button>
+      <button onclick="showSection('contact')">Contact</button>
+    </nav>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="content">
+
+    <!-- EXPERIENCES -->
+    <div id="experience" class="section active">
+      <h2>Expériences professionnelles</h2>
+
+      <div class="card">
+        <h3>Data Scientist — Diot-Siaci</h3>
+        <span>09/2025 – Aujourd’hui</span>
+        <ul>
+          <li>Préparation & structuration données multi-sources</li>
+          <li>Modèles ML (classification, régression)</li>
+          <li>Analyse NLP des verbatims clients</li>
+          <li>Dashboards décisionnels</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Data Scientist — DEKI</h3>
+        <span>05/2025 – 08/2025</span>
+        <ul>
+          <li>Optimisation logistique (VRP)</li>
+          <li>API Flask & Docker</li>
+          <li>Déploiement cloud</li>
+        </ul>
       </div>
     </div>
 
-    <div class="hero-photo">
-      <img src="assets/photo-pro.jpg" alt="Photo Djénéba">
-    </div>
-  </div>
-</header>
+    <!-- PROJECTS -->
+    <div id="projects" class="section">
+      <h2>Projets</h2>
 
-<!-- À PROPOS -->
-<section id="about" class="section">
-  <h2>À propos de moi</h2>
+      <div class="card">
+        <h3>Football Analytics</h3>
+        <p>Application Streamlit connectée à API REST avec visualisations interactives.</p>
+      </div>
 
-  <div class="card">
-    <p>
-      Formée en économétrie et statistiques appliquées, je combine rigueur
-      mathématique et expertise en data science pour transformer la donnée
-      en levier d’aide à la décision.
-    </p>
+      <div class="card">
+        <h3>Analyse Verbatims — NLP</h3>
+        <p>Extraction d’insights via TF-IDF et clustering.</p>
+      </div>
 
-    <p>
-      Mon approche : compréhension métier → exploration des données →
-      modélisation → évaluation → industrialisation.
-    </p>
-  </div>
-
-  <div class="card highlight">
-    <h3>🧠 Points forts</h3>
-    <ul>
-      <li>Analyse prédictive & Machine Learning</li>
-      <li>NLP & analyse de verbatims</li>
-      <li>Optimisation & recherche opérationnelle</li>
-      <li>Déploiement Docker & API</li>
-    </ul>
-  </div>
-</section>
-
-
-<!-- EXPÉRIENCES -->
-<section id="experience" class="section">
-  <h2>Expériences professionnelles</h2>
-
-  <div class="grid">
-
-    <div class="card experience">
-      <h3>Data Scientist — Diot-Siaci</h3>
-      <span class="date">09/2025 – Aujourd’hui</span>
-      <ul>
-        <li>Préparation de données multi-sources</li>
-        <li>Développement modèles ML</li>
-        <li>Analyse NLP des verbatims</li>
-        <li>Création dashboards décisionnels</li>
-      </ul>
+      <div class="card">
+        <h3>Modélisation Prédictive</h3>
+        <p>Logit & Random Forest pour prédiction trafic web.</p>
+      </div>
     </div>
 
-    <div class="card experience">
-      <h3>Data Scientist — DEKI</h3>
-      <span class="date">05/2025 – 08/2025</span>
-      <ul>
-        <li>Optimisation logistique (VRP)</li>
-        <li>API Flask & Docker</li>
-        <li>Déploiement Cloud</li>
-        <li>Tests en conditions réelles</li>
-      </ul>
+    <!-- SKILLS -->
+    <div id="skills" class="section">
+      <h2>Compétences</h2>
+      <div class="card">
+        <p><strong>Langages :</strong> Python, R, SQL</p>
+        <p><strong>ML :</strong> Régression, Classification, Random Forest</p>
+        <p><strong>NLP :</strong> TF-IDF, Clustering</p>
+        <p><strong>Optimisation :</strong> Vehicle Routing Problem</p>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div id="education" class="section">
+      <h2>Formation</h2>
+      <div class="card">
+        <h3>Master Économétrie & Statistique</h3>
+        <p>Aix-Marseille School of Economics</p>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div id="tools" class="section">
+      <h2>Logiciels & Outils</h2>
+      <div class="card">
+        <p>Docker • Flask • Streamlit • Power BI • Tableau • Git • MySQL • Scaleway</p>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>📍 Paris</p>
+        <p>✉️ djenebacoulibaly.pro@gmail.com</p>
+      </div>
     </div>
 
   </div>
-</section>
 
+</div>
 
-<!-- PROJETS -->
-<section id="projects" class="section">
-  <h2>Projets</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Football Analytics</h3>
-      <p>Application Streamlit connectée à une API REST avec visualisations interactives.</p>
-      <span class="tag">Python</span>
-      <span class="tag">Docker</span>
-      <span class="tag">API</span>
-    </div>
-
-    <div class="card">
-      <h3>Analyse Verbatims — NLP</h3>
-      <p>Extraction d’insights via TF-IDF et clustering.</p>
-      <span class="tag">NLP</span>
-      <span class="tag">ML</span>
-    </div>
-
-    <div class="card">
-      <h3>Modélisation Prédictive</h3>
-      <p>Logit & Random Forest pour prédiction trafic web.</p>
-      <span class="tag">R</span>
-      <span class="tag">Économétrie</span>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- COMPÉTENCES -->
-<section id="skills" class="section">
-  <h2>Compétences techniques</h2>
-
-  <div class="card">
-    <p><strong>Langages :</strong> Python, R, SQL, JavaScript</p>
-    <p><strong>ML :</strong> Régression, Classification, Random Forest</p>
-    <p><strong>NLP :</strong> TF-IDF, Clustering, Sentiment Analysis</p>
-    <p><strong>Optimisation :</strong> Vehicle Routing Problem</p>
-  </div>
-</section>
-
-
-<!-- LOGICIELS -->
-<section id="tools" class="section">
-  <h2>Logiciels & Outils</h2>
-
-  <div class="card">
-    <p>Docker • Flask • Streamlit • Power BI • Tableau • Git • GitHub • MySQL • Scaleway</p>
-  </div>
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2>Contact</h2>
-
-  <div class="card contact">
-    <p>📍 Paris</p>
-    <p>✉️ djenebacoulibaly.pro@gmail.com</p>
-    <p>LinkedIn : djénéba-coulibaly</p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Djénéba Coulibaly</p>
-</footer>
+<script src="script.js"></script>
 
 </body>
 </html>
