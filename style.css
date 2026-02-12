@@ -6,16 +6,15 @@ body {
 
 .layout {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* LEFT PANEL */
+/* SIDEBAR */
 .sidebar {
   width: 35%;
   background: linear-gradient(160deg, #1f2a48, #273a66);
   color: white;
   padding: 40px;
-  overflow-y: auto;
 }
 
 .profile-img {
@@ -26,7 +25,7 @@ body {
 
 .role {
   opacity: 0.8;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .about-box {
@@ -53,16 +52,14 @@ body {
   background: #4f6ef7;
 }
 
-/* RIGHT PANEL */
+/* CONTENT */
 .content {
   width: 65%;
   padding: 60px;
-  overflow-y: auto;
 }
 
 .section {
   display: none;
-  animation: fade 0.4s ease-in-out;
 }
 
 .section.active {
@@ -81,7 +78,23 @@ h2 {
   margin-bottom: 30px;
 }
 
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px);}
-  to { opacity: 1; transform: translateY(0);}
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .profile-img {
+    margin: auto;
+  }
 }
