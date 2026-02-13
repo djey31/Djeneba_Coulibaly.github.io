@@ -6,25 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="layout">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-
     <img src="assets/photo-pro.jpg" class="profile-img" alt="Djénéba Coulibaly">
-
     <h1>Djénéba Coulibaly</h1>
     <p class="role">Data Science • Machine Learning • NLP • Optimisation</p>
 
     <div class="about-box">
       <h3>Profil</h3>
       <p>
-        Étudiante en Master 2 Économétrie & Statistique, spécialisée en Data Science.
+        Étudiante en Master 1 Économétrie & Statistique (cursus en anglais), spécialisée en Data Science.
         Je développe des solutions analytiques complètes : exploration des données,
-        modélisation prédictive, analyse NLP, visualisation décisionnelle
+        modélisation prédictive, analyse, visualisation décisionnelle
         et déploiement industrialisé.
       </p>
       <p>
@@ -41,7 +38,6 @@
       <button onclick="showSection('certifications')">Certifications</button>
       <button onclick="showSection('contact')">Contact</button>
     </nav>
-
   </aside>
 
   <!-- CONTENT -->
@@ -52,126 +48,134 @@
       <h2>Expériences professionnelles</h2>
 
       <div class="card">
-        <h3>Data Scientist (Alternance) — Diot-Siaci (Paris)</h3>
-        <span class="date">09/2025 – Aujourd’hui</span>
+        <h3>Data Scientist — DEKI, Marseille</h3>
+        <span class="date">05/2025 – Aujourd’hui</span>
         <ul>
-          <li>Préparation et structuration de données multi-sources (SQL, Python)</li>
-          <li>Analyse exploratoire (EDA) et détection de patterns</li>
-          <li>Développement de modèles ML (régression, classification)</li>
-          <li>Analyse NLP/llm des verbatims clients (TF-IDF, clustering, sentiment), avec créations d'une application web Streamlit pour les metiers</li>
-          <li>Création de dashboards décisionnels (Power BI)</li>
-          <li>Accompagnement sur des cas d’usage IA générative</li>
+          <li>Modélisation et déploiement de modèles prédictifs (régression, classification) via API sur infrastructure cloud (Scaleway).</li>
+          <li>Optimisation logistique avec PyVroom (réduction coûts/délais).</li>
+          <li>Automatisation de pipelines data & MLOps (collecte, entraînement, mise à jour).</li>
+          <li>Analyse exploratoire, feature engineering et préparation des données.</li>
+          <li>Tests en conditions réelles pour validation des modèles.</li>
+          <li>Conception de dashboards interactifs (KPI) et POC valorisés par un design UI (Figma).</li>
         </ul>
       </div>
 
       <div class="card">
-        <h3>Data Scientist (stage) — DEKI (Marseille)</h3>
+        <h3>Secrétaire Générale — JUNIOR DATA ANALYST, Marseille</h3>
+        <span class="date">06/2025 – Aujourd’hui</span>
+        <ul>
+          <li>Recrutement, encadrement et coordination d'équipe.</li>
+          <li>Organisation de réunions stratégiques et pilotage d'événements.</li>
+          <li>Analyse et visualisation de données pour appui à la décision.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Data Scientist (stage) — DEKI, Marseille</h3>
         <span class="date">05/2025 – 08/2025</span>
         <ul>
-          <li>Optimisation logistique via algorithme VRP (PyVroom)</li>
-          <li>Modélisation prédictive et déploiement via API Flask</li>
-          <li>Containerisation Docker & Docker Compose</li>
-          <li>Déploiement cloud sur Scaleway</li>
-          <li>Automatisation pipelines (Python, VBA)</li>
-          <li>Tests en conditions réelles pour validation des modèles</li>
+          <li>Optimisation logistique via algorithme VRP (PyVroom).</li>
+          <li>Modélisation prédictive et déploiement via API Flask.</li>
+          <li>Containerisation Docker & Docker Compose.</li>
+          <li>Déploiement cloud sur Scaleway.</li>
+          <li>Automatisation pipelines (Python, VBA).</li>
+          <li>Tests en conditions réelles pour validation des modèles.</li>
         </ul>
       </div>
     </section>
-
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2>Projets</h2>
 
       <div class="card">
+        <h3>Simulation Marché Boursier — Trader vs IA</h3>
+        <p>
+          Création d'un jeu interactif entre un trader et une IA simulant des stratégies de trading 
+          et de gestion des risques en temps réel.
+        </p>
+        <p><strong>Stack :</strong> Python, Tkinter, Matplotlib, NumPy, Random</p>
+      </div>
+
+      <div class="card">
+        <h3>Prédiction de trafic sur un site de recettes</h3>
+        <p>
+          Analyse prédictive du trafic web : nettoyage des données, modélisation (LPM, Logit, Random Forest), 
+          évaluation des performances et recommandations stratégiques.
+        </p>
+        <p><strong>Stack :</strong> R, Économétrie, Random Forest</p>
+      </div>
+
+      <div class="card">
+        <h3>Visualisation de données & cartographie interactive</h3>
+        <p>
+          Création de dashboards dynamiques incluant barplots et cartes interactives (Leaflet), 
+          à partir de jeux de données structurés pour l'aide à la décision.
+        </p>
+        <p><strong>Stack :</strong> R, Leaflet</p>
+      </div>
+
+      <div class="card">
         <h3>Football Analytics Pro</h3>
         <p>
-          Application Streamlit connectée à l’API Football-Data.org permettant
-          l’analyse en temps réel des performances des équipes et la prédiction probabiliste des matchs.
-        </p>
-        <p>
-          Intégration d’un module prédictif basé sur indicateurs statistiques,
-          visualisations interactives (Plotly) et containerisation complète via Docker.
+          Application Streamlit connectée à l'API Football-Data.org permettant
+          l'analyse en temps réel des performances des équipes et la prédiction probabiliste des matchs.
+          Intégration d'un module prédictif basé sur indicateurs statistiques,
+          visualisations interactives (Plotly) et containerisation Docker.
         </p>
         <p><strong>Stack :</strong> Python, Streamlit, Plotly, Docker, API REST</p>
-        <p>
-          🔗 <a href="https://github.com/djey31/football-analytics" target="_blank">GitHub</a>
-        </p>
+        <p>🔗 <a href="https://github.com/djey31/football-analytics" target="_blank">GitHub</a></p>
       </div>
 
       <div class="card">
         <h3>Analyse des Verbatims Clients — NLP</h3>
         <p>
-          Projet d’analyse textuelle visant à identifier les causes d’insatisfaction client
+          Projet d'analyse textuelle visant à identifier les causes d'insatisfaction client
           via nettoyage des données, vectorisation TF-IDF,
           clustering thématique et analyse de sentiment.
         </p>
-        <p>
-          Objectif : extraire des insights décisionnels pour améliorer l’expérience client.
-        </p>
         <p><strong>Stack :</strong> Python, Scikit-learn, NLP</p>
       </div>
-
-      <div class="card">
-        <h3>Modélisation Prédictive — Trafic Web</h3>
-        <p>
-          Analyse économétrique et machine learning visant à prédire
-          les recettes générant un trafic élevé.
-        </p>
-        <p>
-          Comparaison de modèles : LPM, Logit, Random Forest,
-          évaluation des performances et recommandations stratégiques.
-        </p>
-        <p><strong>Stack :</strong> R, Econométrie, Random Forest</p>
-      </div>
-
-      <div class="card">
-        <h3>Simulation Marché Boursier — Trader vs IA</h3>
-        <p>
-          Jeu interactif simulant des stratégies de trading en temps réel.
-          Implémentation d’un agent simulé pour tester la gestion du risque.
-        </p>
-        <p><strong>Stack :</strong> Python, NumPy, Matplotlib, Tkinter</p>
-      </div>
-
     </section>
-
 
     <!-- SKILLS -->
     <section id="skills" class="section">
-      <h2>Compétences Techniques</h2>
+      <h2>Compétences & Centres d'intérêt</h2>
 
       <div class="card">
-        <p><strong>Langages :</strong> Python, R, SQL, JavaScript, MATLAB, VBA, PHP, HTML, CSS, Bootstrap, Streamlit</p>
-        <p><strong>Frameworks :</strong> Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, PyVroom</p>
-        <p><strong>Déploiement :</strong> Flask, Docker, Postman</p>
-        <p><strong>BI :</strong> Power BI, Tableau, Figma</p>
+        <p><strong>Langages :</strong> Python, R, SQL, JavaScript, MATLAB, VBA, PHP, HTML, CSS, Bootstrap</p>
+        <p><strong>Frameworks / Bibliothèques :</strong> Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, PyVroom, Streamlit</p>
+        <p><strong>Déploiement & API :</strong> Flask, Postman</p>
+        <p><strong>Visualisation / BI :</strong> Tableau, Power BI, Streamlit, Figma (UI/UX dashboards)</p>
         <p><strong>Base de données :</strong> MySQL, DBeaver</p>
-        <p><strong>Cloud :</strong> Scaleway</p>
-        <p><strong>Méthodologies :</strong> EDA, Modélisation statistique, ML, Tests en conditions réelles</p>
+        <p><strong>Outils de développement :</strong> Anaconda, Git, GitHub, VS Code, Jupyter Notebook, Overleaf</p>
+        <p><strong>Cloud & automatisation :</strong> Scaleway, Automatisation de workflows (scripts VBA, Python)</p>
+        <p><strong>Méthodologies :</strong> EDA, Modélisation statistique, Machine Learning (régression, classification)</p>
+        <p><strong>Langues :</strong> Français (bilingue), Anglais (courant)</p>
       </div>
     </section>
-
 
     <!-- EDUCATION -->
     <section id="education" class="section">
       <h2>Formation</h2>
 
       <div class="card">
-        <h3>Master Économétrie & Statistique</h3>
-        <p>Aix-Marseille School of Economics (2021 – 2024)</p>
+        <h3>Master 1 Économétrie & Statistique (cursus en anglais)</h3>
+        <p>Aix-Marseille School of Economics (Université d'Aix-Marseille) — 2024-2025</p>
+        <p><strong>Cours :</strong> Data visualization, Data sampling, Econometrics, Introduction to programming for data analysis, Programming for data science, Statistical software for empirical projects, Introduction to machine learning, Time series</p>
+        <p>🔗 <a href="#" target="_blank">Lien des matières enseignées</a></p>
       </div>
 
       <div class="card">
-        <h3>Licence Mathématiques Appliquées aux Sciences Sociales</h3>
-        <p>Université Aix-Marseille</p>
+        <h3>Licence MIASHS</h3>
+        <p>Université d'Aix-Marseille — 2021-2024</p>
+        <p><strong>Cours :</strong> Optimisation, macroéconomie, microéconomie, informatique, programmation (orientée objet, web), économétrie, RH…</p>
       </div>
 
       <div class="card">
         <h3>Baccalauréat Scientifique</h3>
       </div>
     </section>
-
 
     <!-- CERTIFICATIONS -->
     <section id="certifications" class="section">
@@ -182,12 +186,11 @@
       </div>
     </section>
 
-
     <!-- CONTACT -->
     <section id="contact" class="section">
       <h2>Contact</h2>
       <div class="card">
-        <p>📍 Paris</p>
+        <p>📍 Marseille / Paris</p>
         <p>📞 +33 7 58 08 06 79</p>
         <p>✉️ djenebacoulibaly.pro@gmail.com</p>
         <p>
@@ -200,6 +203,17 @@
   </main>
 </div>
 
-<script src="script.js"></script>
+<script>
+  function showSection(sectionId) {
+    // Cache toutes les sections
+    document.querySelectorAll('.section').forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    // Affiche la section demandée
+    document.getElementById(sectionId).classList.add('active');
+  }
+</script>
+
 </body>
 </html>
