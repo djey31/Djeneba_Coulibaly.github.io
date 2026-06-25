@@ -4,7 +4,242 @@
   <meta charset="UTF-8">
   <title>Djénéba Coulibaly — Data Scientist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6fb;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 280px;
+      min-width: 240px;
+      background: #1F3864;
+      color: #fff;
+      padding: 36px 24px 36px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2E5FA3;
+      margin-bottom: 16px;
+      background: #2E5FA3;
+    }
+
+    .sidebar h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .role {
+      font-size: 0.78rem;
+      color: #a8c0e8;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .about-box {
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 14px 14px;
+      margin-bottom: 22px;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #d0dff5;
+    }
+
+    .about-box p { margin-bottom: 8px; }
+    .about-box p:last-child { margin-bottom: 0; }
+    .about-box strong { color: #fff; }
+
+    .available-badge {
+      background: #2E5FA3;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+      letter-spacing: 0.03em;
+    }
+
+    nav.menu {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    nav.menu button {
+      background: rgba(255,255,255,0.09);
+      border: none;
+      color: #d0dff5;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.18s, color 0.18s;
+      font-family: inherit;
+    }
+
+    nav.menu button:hover,
+    nav.menu button.active {
+      background: #2E5FA3;
+      color: #fff;
+    }
+
+    /* CONTENT */
+    .content {
+      flex: 1;
+      padding: 40px 48px;
+      max-width: 860px;
+    }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .section h2 {
+      font-size: 1.45rem;
+      color: #1F3864;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #2E5FA3;
+      font-weight: 700;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(31,56,100,0.07);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      color: #1F3864;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .date {
+      font-size: 0.78rem;
+      color: #2E5FA3;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .card ul li {
+      font-size: 0.88rem;
+      color: #444;
+      margin-bottom: 5px;
+      line-height: 1.55;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .stack-tag {
+      display: inline-block;
+      background: #eef2fb;
+      color: #2E5FA3;
+      border-radius: 5px;
+      padding: 2px 9px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin: 3px 3px 0 0;
+    }
+
+    .wip-badge {
+      display: inline-block;
+      background: #fff3cd;
+      color: #856404;
+      border-radius: 5px;
+      padding: 2px 9px;
+      font-size: 0.73rem;
+      font-weight: 600;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .contact-line {
+      font-size: 0.92rem;
+      color: #333;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-line a {
+      color: #2E5FA3;
+      text-decoration: none;
+    }
+
+    .contact-line a:hover { text-decoration: underline; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .skill-block h4 {
+      font-size: 0.82rem;
+      color: #1F3864;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .skill-block { margin-bottom: 4px; }
+
+    a { color: #2E5FA3; }
+
+    @media (max-width: 700px) {
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: relative; }
+      .content { padding: 24px 16px; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -14,32 +249,28 @@
   <aside class="sidebar">
     <img src="assets/photo-pro.jpg" class="profile-img" alt="Djénéba Coulibaly">
     <h1>Djénéba Coulibaly</h1>
-    <p class="role">Data Science • Machine Learning • Économétrie • Optimisation</p>
+    <p class="role">ML & IA Générative — Data Scientist</p>
+    <div class="available-badge">Disponible septembre 2026</div>
 
     <div class="about-box">
-      <h3>Profil</h3>
       <p>
-        Étudiante en <strong>Master 2 Économétrie & Statistique (cursus en anglais)</strong> à l'AMSE, 
-        je développe des solutions data de bout en bout avec une forte composante métier.
+        De la détection de fraude en assurance à l'optimisation logistique bas-carbone, j'ai conçu et déployé des modèles de scoring, des pipelines GenAI et des architectures RAG qui ont permis aux équipes métiers de piloter leurs données en autonomie.
       </p>
       <p>
-        Ma double compétence en <strong>machine learning avancé et en économétrie</strong> me permet 
-        d'aborder des problématiques variées : scoring, prévision, clustering, analyse de risques, 
-        traitement de données textuelles et industrialisation de modèles.
+        Chez <strong>DIOT-SIACI</strong>, j'ai développé un pipeline GenAI sur Snowflake Cortex pour l'analyse de verbatims clients et des modèles de détection d'anomalies sur des données de santé. Chez <strong>DEKI</strong>, j'ai mis en production des modèles prédictifs via API REST pour optimiser les tournées logistiques, réduire les émissions de CO2 et diminuer les coûts opérationnels.
       </p>
       <p>
-        Rigoureuse et orientée résultats, je suis attentive à la <strong>qualité des données, 
-        à l'interprétabilité des modèles</strong> et à leur alignement avec les objectifs stratégiques.
+        Spécialisée en <strong>machine learning, économétrie causale et IA générative</strong> (LLM, RAG, agents).
       </p>
     </div>
 
     <nav class="menu">
-      <button onclick="showSection('experience')">Expériences</button>
-      <button onclick="showSection('projects')">Projets</button>
-      <button onclick="showSection('skills')">Compétences</button>
-      <button onclick="showSection('education')">Formation</button>
-      <button onclick="showSection('certifications')">Certifications</button>
-      <button onclick="showSection('contact')">Contact</button>
+      <button onclick="showSection('experience', this)" class="active">Expériences</button>
+      <button onclick="showSection('projects', this)">Projets</button>
+      <button onclick="showSection('skills', this)">Compétences</button>
+      <button onclick="showSection('education', this)">Formation</button>
+      <button onclick="showSection('certifications', this)">Certifications</button>
+      <button onclick="showSection('contact', this)">Contact</button>
     </nav>
   </aside>
 
@@ -51,32 +282,48 @@
       <h2>Expériences professionnelles</h2>
 
       <div class="card">
-        <h3>Data Scientist (Alternance) — Diot-Siaci, Paris</h3>
-        <span class="date">09/2025 – Aujourd’hui</span>
+        <h3>Data Scientist — Diot-Siaci, Paris</h3>
+        <span class="date">09/2025 – Aujourd'hui · Assurance</span>
         <ul>
-          <li>Préparation et structuration de données multi-sources (Alteryx, Python)</li>
-          <li>Analyse exploratoire (EDA) et détection de patterns</li>
-          <li>Développement de modèles ML (régression, classification)</li>
-          <li><strong>Développement d'une application d'analyse de verbatims clients avec Snowflake Cortex (IA générative)</strong> : nettoyage, clustering thématique, analyse de sentiment, interface Streamlit pour les métiers</li>
-          <li>Création de dashboards décisionnels (tableau desktop)</li>
-          <li>Accompagnement sur des cas d’usage IA générative</li>
+          <li>Développement d'une application d'analyse de verbatims clients via <strong>Snowflake Cortex (GenAI)</strong> : nettoyage, clustering thématique (TF-IDF, LDA), analyse de sentiment, interface Streamlit pour les métiers</li>
+          <li>Scoring et détection de comportements atypiques chez les professionnels de santé : classification, feature engineering, SHAP / interprétabilité</li>
+          <li>Conception de modèles ML (régression, classification) pour l'aide à la décision assurantielle</li>
+          <li>Pipelines de données multi-sources (Python, Alteryx) et dashboards décisionnels Tableau Desktop</li>
+          <li>Accompagnement des équipes métiers sur des cas d'usage IA générative — montée en autonomie sur l'exploitation des données</li>
         </ul>
+        <div style="margin-top:10px">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Snowflake Cortex</span>
+          <span class="stack-tag">Alteryx</span>
+          <span class="stack-tag">Tableau</span>
+          <span class="stack-tag">scikit-learn</span>
+          <span class="stack-tag">RAG</span>
+          <span class="stack-tag">Streamlit</span>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Data Scientist (Stage) — DEKI, Marseille</h3>
-        <span class="date">Mai 2025 – Août 2025</span>
+        <h3>Data Scientist — DEKI, Marseille</h3>
+        <span class="date">Mai 2025 – Août 2025 · Supply Chain & Logistique verte</span>
         <ul>
-          <li>Modélisation et déploiement de modèles prédictifs via API sur infrastructure cloud (Scaleway)</li>
-          <li>Optimisation logistique avec PyVroom (réduction coûts/délais)</li>
-          <li>Analyse exploratoire, feature engineering et préparation des données</li>
-          <li>Conception de dashboards interactifs (KPI) et POC valorisés par un design UI (Figma)</li>
+          <li>Mise en production de modèles prédictifs via <strong>API REST sur infrastructure cloud Scaleway</strong></li>
+          <li>Optimisation des tournées logistiques avec PyVroom : réduction des émissions de CO2 et des coûts opérationnels</li>
+          <li>Feature engineering avancé, EDA approfondie, tests de robustesse en conditions réelles</li>
+          <li>Conception de dashboards interactifs (KPI) et POC valorisés via design UI (Figma)</li>
         </ul>
+        <div style="margin-top:10px">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">Scaleway</span>
+          <span class="stack-tag">PyVroom</span>
+          <span class="stack-tag">Figma</span>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Secrétaire Générale — JUNIOR DATA ANALYST, Marseille</h3>
-        <span class="date">Juin 2025 – Aujourd’hui</span>
+        <h3>Secrétaire Générale — Junior Data Analyst, Marseille</h3>
+        <span class="date">Juin 2025 – Aujourd'hui · Junior-Entreprise</span>
         <ul>
           <li>Recrutement, encadrement et coordination d'équipe</li>
           <li>Organisation de réunions stratégiques et pilotage d'événements</li>
@@ -90,147 +337,223 @@
       <h2>Projets</h2>
 
       <div class="card">
-        <h3>Application d'Analyse des Verbatims Clients — NLP & Snowflake Cortex</h3>
-        <span class="date">2025 – Alternance Diot-Siaci</span>
-        <p>
-          Application interactive d'analyse textuelle des avis clients permettant aux équipes métier d'explorer automatiquement les retours utilisateurs.
-        </p>
+        <h3>Pipeline IA full-stack <span class="wip-badge">En cours</span></h3>
+        <span class="date">2026 — Projet personnel</span>
+        <p>Application IA de bout en bout combinant LLM, RAG, sécurité et base de données dans une architecture modulaire orientée production.</p>
         <ul>
-          <li>Nettoyage et prétraitement des verbatims (tokenisation, lemmatisation)</li>
+          <li>Architecture RAG avec LLM (OpenAI / Mistral) et base vectorielle</li>
+          <li>Backend FastAPI avec authentification JWT et OAuth2</li>
+          <li>Gestion des rôles et des accès (RBAC)</li>
+          <li>Sécurisation des endpoints API et protection des données sensibles</li>
+          <li>Base de données SQL (PostgreSQL) + NoSQL (MongoDB)</li>
+          <li>Conteneurisation Docker et architecture modulaire orientée production</li>
+        </ul>
+        <div style="margin-top:10px">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">LLM</span>
+          <span class="stack-tag">RAG</span>
+          <span class="stack-tag">JWT / OAuth2</span>
+          <span class="stack-tag">RBAC</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Analyse de verbatims clients — NLP & Snowflake Cortex</h3>
+        <span class="date">2025 — DIOT-SIACI</span>
+        <p>Application interactive d'analyse textuelle des avis clients permettant aux équipes métier d'explorer automatiquement les retours utilisateurs.</p>
+        <ul>
+          <li>Nettoyage et prétraitement (tokenisation, lemmatisation)</li>
           <li>Vectorisation TF-IDF et clustering thématique (K-means, LDA)</li>
-          <li>Analyse de sentiment avec <strong>Snowflake Cortex (IA générative)</strong></li>
-          <li>Catégorisation automatique des insatisfactions et détection des tendances</li>
+          <li>Analyse de sentiment avec Snowflake Cortex (IA générative)</li>
           <li>Interface Streamlit et export des insights sous forme de rapports</li>
         </ul>
-        <p><strong>Stack :</strong> Python, Snowflake Cortex, Scikit-learn, NLTK, Streamlit, Pandas</p>
-      </div>
-
-      <div class="card">
-        <h3>Automated Classification of Dry Bean Varieties — Supervised Learning</h3>
-        <span class="date">Janvier 2026 — Projet académique (AMSE)</span>
-      
-        <p>
-          Projet de classification supervisée visant à automatiser l’identification de variétés de haricots secs afin
-          de réduire l’asymétrie d’information liée au tri manuel. :contentReference[oaicite:1]{index=1}
-        </p>
-      
-        <ul>
-          <li><strong>Données :</strong> UCI Dry Bean Dataset — 13 543 observations, 7 variétés, 16 descripteurs morphologiques (area, perimeter, shape factors…). </li>
-          <li><strong>Pipeline :</strong> EDA → preprocessing (RobustScaler) → gestion du déséquilibre (SMOTE) → comparaison modèles + validation cross-validation stratifiée (5-fold).</li>
-          <li><strong>Modèles testés :</strong> Logit/Logistic Regression, Elastic Net, SVM (RBF), MLP.</li>
-          <li><strong>Résultat clé :</strong> le meilleur modèle est <strong>SVM (RBF)</strong> en espace de features original (sans PCA), avec <strong>Macro-F1 = 0.9369</strong> et <strong>Balanced Accuracy = 0.9357</strong>.</li>
-          <li><strong>Insight :</strong> la réduction de dimension (PCA) peut dégrader la séparabilité malgré une variance expliquée élevée.</li>
-        </ul>
-      
-        <p><strong>Stack :</strong> Python, scikit-learn, PCA, SMOTE, SVM, MLP, EDA</p>
-      
-        <p>
-          🔗 <a href="assets/presentation.pdf" target="_blank">Slides (PDF)</a>
-          &nbsp;|&nbsp;
-        </p>
-      </div>
-      
-      <div class="card">
-        <h3>Simulation Marché Boursier — Trader vs IA</h3>
-        <p>
-          Création d'un jeu interactif entre un trader et une IA simulant des stratégies de trading 
-          et de gestion des risques en temps réel.
-        </p>
-        <p><strong>Stack :</strong> Python, Tkinter, Matplotlib, NumPy, Random</p>
-      </div>
-
-      <div class="card">
-        <h3>Prédiction de trafic sur un site de recettes</h3>
-        <p>
-          Analyse prédictive du trafic web : nettoyage des données, modélisation (LPM, Logit, Random Forest), 
-          évaluation des performances et recommandations stratégiques.
-        </p>
-        <p><strong>Stack :</strong> R, Économétrie, Random Forest</p>
-      </div>
-
-      <div class="card">
-        <h3>Visualisation de données & cartographie interactive</h3>
-        <p>
-          Création de dashboards dynamiques incluant barplots et cartes interactives (Leaflet), 
-          à partir de jeux de données structurés pour l'aide à la décision.
-        </p>
-        <p><strong>Stack :</strong> R, Leaflet</p>
+        <div style="margin-top:10px">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Snowflake Cortex</span>
+          <span class="stack-tag">NLTK</span>
+          <span class="stack-tag">scikit-learn</span>
+          <span class="stack-tag">Streamlit</span>
+        </div>
       </div>
 
       <div class="card">
         <h3>Football Analytics Pro</h3>
-        <p>
-          Application Streamlit connectée à l'API Football-Data.org permettant
-          l'analyse en temps réel des performances des équipes et la prédiction probabiliste des matchs.
-        </p>
-        <p><strong>Stack :</strong> Python, Streamlit, Plotly, Docker, API REST</p>
-        <p>🔗 <a href="https://github.com/djey31/football-analytics" target="_blank">GitHub</a></p>
+        <span class="date">2025 — Projet personnel</span>
+        <p>Application Streamlit connectée à l'API Football-Data.org permettant l'analyse en temps réel des performances des équipes et la prédiction probabiliste des matchs.</p>
+        <div style="margin-top:10px">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Streamlit</span>
+          <span class="stack-tag">Plotly</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">API REST</span>
+        </div>
+        <p style="margin-top:10px">🔗 <a href="https://github.com/djey31/football-analytics" target="_blank">GitHub</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Classification de variétés de haricots — Supervised Learning</h3>
+        <span class="date">Janvier 2026 — Projet académique AMSE</span>
+        <p>Classification supervisée automatisant l'identification de 7 variétés de haricots secs (13 543 observations, 16 descripteurs morphologiques).</p>
+        <ul>
+          <li>Pipeline : EDA → RobustScaler → SMOTE → cross-validation stratifiée (5-fold)</li>
+          <li>Modèles testés : Logistic Regression, Elastic Net, SVM (RBF), MLP</li>
+          <li><strong>Résultat :</strong> SVM (RBF) — Macro-F1 = 0.9369, Balanced Accuracy = 0.9357</li>
+          <li>Insight : la réduction PCA peut dégrader la séparabilité malgré une variance expliquée élevée</li>
+        </ul>
+        <div style="margin-top:10px">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">scikit-learn</span>
+          <span class="stack-tag">SVM</span>
+          <span class="stack-tag">SMOTE</span>
+          <span class="stack-tag">PCA</span>
+        </div>
+        <p style="margin-top:10px">🔗 <a href="assets/presentation.pdf" target="_blank">Slides (PDF)</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Simulation Marché Boursier — Trader vs IA</h3>
+        <span class="date">Projet académique</span>
+        <p>Jeu interactif simulant des stratégies de trading et de gestion des risques en temps réel entre un trader et une IA.</p>
+        <div style="margin-top:10px">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Tkinter</span>
+          <span class="stack-tag">Matplotlib</span>
+          <span class="stack-tag">NumPy</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Prédiction de trafic web</h3>
+        <span class="date">Projet académique</span>
+        <p>Analyse prédictive du trafic web : nettoyage, modélisation (LPM, Logit, Random Forest), évaluation et recommandations stratégiques.</p>
+        <div style="margin-top:10px">
+          <span class="stack-tag">R</span>
+          <span class="stack-tag">Random Forest</span>
+          <span class="stack-tag">Économétrie</span>
+        </div>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section">
       <h2>Compétences</h2>
-
       <div class="card">
-        <p><strong>Langages :</strong> Python, R, SQL, JavaScript, MATLAB, VBA, PHP, HTML, CSS</p>
-        <p><strong>ML & Stats :</strong> Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, PyVroom, NLTK</p>
-        <p><strong>Économétrie :</strong> Séries temporelles, Modèles de durée, Méthodes non paramétriques, Causalité</p>
-        <p><strong>Déploiement :</strong> Flask, Docker, Postman, Scaleway, Snowflake Cortex</p>
-        <p><strong>Visualisation :</strong> Power BI, Tableau, Streamlit, Figma, Leaflet</p>
-        <p><strong>Bases de données :</strong> MySQL, DBeaver</p>
-        <p><strong>Outils :</strong> Git, GitHub, VS Code, Jupyter, Anaconda, Overleaf</p>
-        <p><strong>Méthodologies :</strong> EDA, Modélisation prédictive, Scoring, Clustering, NLP, MLOps</p>
-        <p><strong>Langues :</strong> Français (bilingue), Anglais (courant)</p>
+        <div class="skills-grid">
+          <div class="skill-block">
+            <h4>Langages</h4>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">R</span>
+            <span class="stack-tag">SQL</span>
+            <span class="stack-tag">VBA</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">HTML/CSS</span>
+          </div>
+          <div class="skill-block">
+            <h4>ML & Stats</h4>
+            <span class="stack-tag">scikit-learn</span>
+            <span class="stack-tag">pandas</span>
+            <span class="stack-tag">numpy</span>
+            <span class="stack-tag">NLTK</span>
+            <span class="stack-tag">PyVroom</span>
+            <span class="stack-tag">SHAP</span>
+          </div>
+          <div class="skill-block">
+            <h4>IA Générative</h4>
+            <span class="stack-tag">LLM</span>
+            <span class="stack-tag">RAG</span>
+            <span class="stack-tag">Snowflake Cortex</span>
+            <span class="stack-tag">n8n</span>
+            <span class="stack-tag">Prompt Engineering</span>
+          </div>
+          <div class="skill-block">
+            <h4>Déploiement</h4>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">Docker</span>
+            <span class="stack-tag">Scaleway</span>
+            <span class="stack-tag">API REST</span>
+            <span class="stack-tag">Git</span>
+          </div>
+          <div class="skill-block">
+            <h4>Visualisation</h4>
+            <span class="stack-tag">Tableau</span>
+            <span class="stack-tag">Power BI</span>
+            <span class="stack-tag">Streamlit</span>
+            <span class="stack-tag">Plotly</span>
+            <span class="stack-tag">Figma</span>
+          </div>
+          <div class="skill-block">
+            <h4>Bases de données</h4>
+            <span class="stack-tag">PostgreSQL</span>
+            <span class="stack-tag">MySQL</span>
+            <span class="stack-tag">MongoDB</span>
+            <span class="stack-tag">Snowflake</span>
+            <span class="stack-tag">DBeaver</span>
+          </div>
+          <div class="skill-block">
+            <h4>Économétrie</h4>
+            <span class="stack-tag">Séries temporelles</span>
+            <span class="stack-tag">Modèles de durée</span>
+            <span class="stack-tag">Causalité</span>
+            <span class="stack-tag">Méthodes non paramétriques</span>
+          </div>
+          <div class="skill-block">
+            <h4>Outils</h4>
+            <span class="stack-tag">Alteryx</span>
+            <span class="stack-tag">Jupyter</span>
+            <span class="stack-tag">VS Code</span>
+            <span class="stack-tag">Overleaf</span>
+            <span class="stack-tag">Anaconda</span>
+          </div>
+        </div>
       </div>
     </section>
 
-   <!-- EDUCATION -->
-<section id="education" class="section">
-  <h2>Formation</h2>
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <h2>Formation</h2>
 
-  <div class="card">
-    <h3>Master Économétrie & Statistique – Track Econometrics & Data Science (cursus intégralement en anglais)</h3>
-    <p>Aix-Marseille School of Economics (AMSE) — 2024-2026</p>
-    
-    <p><strong>Master 2 (2025-2026) :</strong></p>
-    <ul>
-      <li>Machine Learning avancé, Interprétabilité et causalité</li>
-      <li>Modèles de transition et de durées, méthodes non paramétriques</li>
-      <li>Séries temporelles, méthodes de prévision, réduction d'information</li>
-      <li>Hackathon, communication professionnelle et scientifique, certification</li>
-      <li>Projet de fin d'études (18 ECTS)</li>
-    </ul>
-    
-    <p><strong>Master 1 (2024-2025) :</strong></p>
-    <ul>
-      <li>Data visualization, Data sampling</li>
-      <li>Econometrics, Programming for data science</li>
-      <li>Introduction to machine learning, Time series</li>
-      <li>Statistical software for empirical projects</li>
-    </ul>
-    
-    <p>🔗 <a href="https://www.amse-aixmarseille.fr/sites/default/files/study/master/cours_m2_econometrie_stat_eds_option_classique_apprentissage.pdf" target="_blank">Détail des enseignements du Master 2 (PDF)</a></p>
-  </div>
+      <div class="card">
+        <h3>Master Économétrie & Statistique — Track Econometrics & Data Science</h3>
+        <span class="date">AMSE, Aix-Marseille School of Economics — 2024-2026 · Cursus intégralement en anglais · Mention Bien</span>
+        <p><strong>Master 2 (2025-2026) :</strong></p>
+        <ul>
+          <li>Machine Learning avancé, interprétabilité et causalité</li>
+          <li>Modèles de transition et de durées, méthodes non paramétriques</li>
+          <li>Séries temporelles, méthodes de prévision, réduction d'information</li>
+          <li>Hackathon, communication professionnelle et scientifique</li>
+          <li>Mémoire de fin d'études (18 ECTS)</li>
+        </ul>
+        <p style="margin-top:8px"><strong>Master 1 (2024-2025) :</strong></p>
+        <ul>
+          <li>Data visualization, Data sampling, Econometrics</li>
+          <li>Programming for data science, Introduction to machine learning</li>
+          <li>Time series, Statistical software for empirical projects</li>
+        </ul>
+        <p style="margin-top:10px">🔗 <a href="https://www.amse-aixmarseille.fr/sites/default/files/study/master/cours_m2_econometrie_stat_eds_option_classique_apprentissage.pdf" target="_blank">Détail des enseignements M2 (PDF)</a></p>
+      </div>
 
-  <div class="card">
-    <h3>Licence MIASHS</h3>
-    <p>Université d'Aix-Marseille — 2021-2024</p>
-    <p><strong>Cours :</strong> Optimisation, macroéconomie, microéconomie, programmation orientée objet et web, économétrie, RH</p>
-  </div>
+      <div class="card">
+        <h3>Licence MIASHS</h3>
+        <span class="date">Université d'Aix-Marseille — 2021-2024</span>
+        <p>Optimisation, macroéconomie, microéconomie, programmation orientée objet et web, économétrie.</p>
+      </div>
 
-  <div class="card">
-    <h3>Baccalauréat Scientifique</h3>
-    <p>2019-2020</p>
-  </div>
-</section>
+      <div class="card">
+        <h3>Baccalauréat Scientifique</h3>
+        <span class="date">2020</span>
+      </div>
+    </section>
 
     <!-- CERTIFICATIONS -->
     <section id="certifications" class="section">
       <h2>Certifications</h2>
       <div class="card">
-        <p>IA Générative — LinkedIn Learning</p>
-        <p>Power BI — Udemy</p>
+        <p><span class="stack-tag">IA Générative</span> LinkedIn Learning</p>
+        <p style="margin-top:8px"><span class="stack-tag">Power BI</span> Udemy</p>
       </div>
     </section>
 
@@ -238,13 +561,11 @@
     <section id="contact" class="section">
       <h2>Contact</h2>
       <div class="card">
-        <p>📍 Paris</p>
-        <p>📞 +33 7 58 08 06 79</p>
-        <p>✉️ djenebacoulibaly.pro@gmail.com</p>
-        <p>
-          🔗 <a href="https://www.linkedin.com/in/djénéba-coulibaly-7a24b9272" target="_blank">LinkedIn</a><br>
-          🔗 <a href="https://github.com/djey31" target="_blank">GitHub</a>
-        </p>
+        <div class="contact-line">📍 Paris, Île-de-France</div>
+        <div class="contact-line">📞 <a href="tel:+33758080679">+33 7 58 08 06 79</a></div>
+        <div class="contact-line">✉️ <a href="mailto:djenebacoulibaly.pro@gmail.com">djenebacoulibaly.pro@gmail.com</a></div>
+        <div class="contact-line">🔗 <a href="https://www.linkedin.com/in/djénéba-coulibaly-7a24b9272" target="_blank">LinkedIn</a></div>
+        <div class="contact-line">🔗 <a href="https://github.com/djey31" target="_blank">GitHub</a></div>
       </div>
     </section>
 
@@ -252,11 +573,11 @@
 </div>
 
 <script>
-  function showSection(sectionId) {
-    document.querySelectorAll('.section').forEach(section => {
-      section.classList.remove('active');
-    });
+  function showSection(sectionId, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.getElementById(sectionId).classList.add('active');
+    document.querySelectorAll('nav.menu button').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
   }
 </script>
 
